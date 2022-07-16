@@ -14,8 +14,6 @@ else:
 i = 1
 for s in f:
     s = s.rstrip()
-    # 単語を小文字化する
-    # 単語を辞書リストに追加
     if s:
         print("{:6d}\t{}".format(i, s))
         i += 1
