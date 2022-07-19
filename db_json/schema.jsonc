@@ -1,0 +1,22 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "db2022-Schema",
+    "type": "object",
+    "properties": {
+      "id": { "type": "integer" },
+      "customer_id": { "type": "integer" },
+      "keisoku": { "type": "string", "format": "date" },
+      "weight": { "type": "number" },
+      "height": { "type": "number" },
+      "fat": { "type": "number" },
+      "birthday": { "type": "string", "format": "date"  },
+      "name": { "type": "string" },
+      "gender": { "enum": ["male", "female", "other"] }
+    },
+    "required": [
+      "id",
+      "customer_id",
+      "keisoku"
+    ]
+}
+  

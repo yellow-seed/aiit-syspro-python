@@ -1,0 +1,11 @@
+{
+    "id": 123,
+    "customer_id": 11,
+    "keisoku": "2022-12-31",
+    "weight": 55.5,
+    "height": 165.5,
+    "fat": 22.2,
+    "birthday": "1999-12-31",
+    "name": "tanakataro",
+    "gender": "male"
+}
