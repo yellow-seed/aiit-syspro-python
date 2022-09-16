@@ -1,7 +1,5 @@
 import sys
 import itertools
-# 基本動作: 連続して重複している行を1行にまとめて表示する
-# uniq [オプション] [入力ファイル名 [出力ファイル名]]
 
 def has_option(arg):
     return arg == '-c' or arg == '-u' or arg == '-d' or arg == '-i'
@@ -45,7 +43,6 @@ def uniq_with_option(lines, opt):
 
 argc = len(sys.argv)
 if argc == 1:
-    print('mysh> ')
     f = sys.stdin
     lines = f.readlines()
     uniq(lines)
@@ -61,7 +58,7 @@ elif argc == 2:
             lines = f.readlines()
             uniq(lines)
         except IOError:
-            sys.exit("nl: No such file or directory: {}".format(sys.argv[1]))
+            sys.exit("uniq: No such file or directory: {}".format(sys.argv[1]))
 elif argc == 3:
     if has_option(sys.argv[1]):
         option = sys.argv[1]
@@ -70,16 +67,16 @@ elif argc == 3:
             lines = f.readlines()
             uniq_with_option(lines, option)
         except IOError:
-            sys.exit("nl: No such file or directory: {}".format(sys.argv[2]))
+            sys.exit("uniq: No such file or directory: {}".format(sys.argv[2]))
     else:
         try:
             f = open(sys.argv[1], "r")
             lines = f.readlines()
             uniq(lines)
         except IOError:
-            sys.exit("nl: No such file or directory: {}".format(sys.argv[1]))
-else: # TODO: できればargc == 4 のケース実装(最後の引数のファイル名に書き出す)
-    sys.exit("usage: uniq.py [option] [input_file]")
+            sys.exit("uniq: No such file or directory: {}".format(sys.argv[1]))
+else:
+    sys.exit("usage: python uniq.py [option] [input_file]")
 
 f.close()
 
